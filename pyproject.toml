@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-code-eval"
+version = "0.1.0"
+description = "Deterministic CI/CD Evals, Adversarial Red-Teaming & Cryptographic SHA-256 Receipts for Claude Code"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Benni Alencar", email = "bennialencar@benni-os.net"},
+]
+keywords = [
+    "claude-code",
+    "anthropic",
+    "claude",
+    "mcp",
+    "model-context-protocol",
+    "evals",
+    "red-teaming",
+    "ci-cd",
+    "ai-agents",
+    "python",
+    "benni-os",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+claude-eval = "claude_code_eval.cli:main"
+
+[project.urls]
+Homepage = "https://benni-os.net"
+Repository = "https://github.com/Benni-OS/claude-code-eval"
+Issues = "https://github.com/Benni-OS/claude-code-eval/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
